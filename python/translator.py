@@ -31,13 +31,18 @@ dictionnary_braille = {
 def convert_braille(sentence):
     new_text_converted = ""
     compteur = 0
+    length_of_sentence = len(sentence)
     for char in sentence:
-        if dictionnary_braille[char] != 'o' and dictionnary_braille[char] != '.':
+        if char == 'O' or char == '.':
             compteur = compteur + 1
-        if compteur > 0:
+        if compteur > 6:
+            break
+    if compteur < 5:
+        for char in sentence:
             word = dictionnary_braille[char] 
             new_text_converted += word
-        else:
+    else:
+        for 
             word = list(dictionnary_braille.keys())[list(dictionnary_braille.values()).index(sentence)]
             new_text_converted += word
 
@@ -45,7 +50,8 @@ def convert_braille(sentence):
 
 
 
-convert_braille("O.OO..O.....")
-##print(list(dictionnary_braille.keys())
-      #[list(dictionnary_braille.values()).index("O.....")])
+convert_braille("OOO...")
+
+#print(list(dictionnary_braille.keys())
+    #[list(dictionnary_braille.values()).index("O.OO..")])
 
